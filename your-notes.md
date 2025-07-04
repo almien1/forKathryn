@@ -73,6 +73,35 @@ The presence of an A command seems to be leaning towards the second option, as i
 
 Also, this was supposed to be used for a web application, so is there some concept of "session" that the website would be supplying?  e.g. if that session had previously sent an A, then a subsequent command with the same session would be allowed to issue a B or T.
 
-Notes:
-- Time for a bike ride, thinking time before decision time!
+
+### GUI
+
+Assuming we go with the console idea, we'll need a loop of "std::cin >> (DLL) >> std::cout"
+
+Note: don't just pipe cin, that doesn't work with empty lines, and apparently it tries to interpret spaces as different fields!
+
+For now, we'll stop at the first empty command (press enter to exit) but it might be nice to support Ctrl-D/Ctrl-C at some point (registering some signal handlers?)
+
+### DLL interface
+
+For the DLL interface, I'm going to suggest C-style strings on the basis that this is clearly 
+being designed for use in some web technology, so the program eventually calling this DLL 
+might not be written in C/C++.  
+
+If we give it the simplest possible interface that doesn't rely on (e.g.) std::string, then it 
+should be easier if anyone needs to use this DLL within a Python/Delphi/whatever program.
+
+Interface:
+- command (string)
+- response (string buffer)
+
+Downsides:
+- possibility of truncated output if the calling function doesn't supply enough space for a long response
+- wasted memory if the caller is too cautious with overallocating spce
+- maybe we just need to document a "suggested" length?
+
+### Application state
+
+Global variable in the DLL for now ("It is perfectly fine") - once the MVP is working we can 
+demo it as part of a discussion on long-term storage requirements.
 

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{65cf552d-849a-48c6-8b3c-b294df2ab35d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hello-world.h">
@@ -22,12 +25,30 @@
     <ClInclude Include="config.h">
       <Filter>Api</Filter>
     </ClInclude>
+    <ClInclude Include="banking-api.h">
+      <Filter>Api</Filter>
+    </ClInclude>
+    <ClInclude Include="Banking.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BankAccount.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="hello-world.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="banking-api.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Banking.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankAccount.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

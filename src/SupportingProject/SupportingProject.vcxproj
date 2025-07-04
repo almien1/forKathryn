@@ -155,11 +155,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BankAccount.h" />
+    <ClInclude Include="Banking.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="banking-api.h" />
     <ClInclude Include="hello-world.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BankAccount.cpp" />
+    <ClCompile Include="banking-api.cpp" />
+    <ClCompile Include="Banking.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="hello-world.cpp" />
   </ItemGroup>

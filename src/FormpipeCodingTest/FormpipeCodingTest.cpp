@@ -1,10 +1,6 @@
 #include <iostream>
 #include <Windows.h>
-
-typedef const wchar_t* helloWorldFunctionReturn;
-typedef helloWorldFunctionReturn (CALLBACK *helloWorldFunctionType) ();
-
-typedef UINT(CALLBACK* LPFNDLLFUNC1)(DWORD, UINT);
+#include "../SupportingProject/hello-world.h"
 
 int main()
 {

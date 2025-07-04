@@ -35,3 +35,44 @@ Result:
 	- Notepad++ detects it as Mac style!
 	- Maybe change "\r\n" to std::endl - I guess "\n" was being expanded to the two-byte version
 	- Okay now we have a "Windows style" output with a single line.
+
+
+## Event handler
+
+"UI -> Handler -> Command -> Event".  "The UI will in our case be the command line."
+
+Requirements:
+- O name : Create account with name (O = open)
+- A name : Make name the account that following commands will work on (A = Activate)
+- C : Close account (C = Close)
+- D amount : Deposit an amount (D = Deposit)
+- W amount : Withdraw an amount (W = Withdraw)
+- B : Show current balance (B = balance)
+- T : List transactions on account (T = Transactions)
+
+Quick requirements analysis:
+- O: unique name needed.  name restrictions? (like spaces?) Does O imply A, or should someone activate an account after opening it?
+- A: This implies that the application state needs a "currently selected account" field
+- C: I guess this means no further actions can be done on that account
+- C: Should it be possible to open another account with the same name?  i.e. do we delete the account, or just mark it as closed?  If it can be marked as closed, can O open the account again?
+- D: pretty simple.  I guess we're using a single abstract currency.  Do we need to care about how currency is stored - e.g. ones with very large numbers like vietnam.  Do we need to use integer methods because it's currency or is floating point okay in this case?
+- W: looks like a conflict between two requirements: 
+	- "just assume that overdrawing is okay"
+	- "what to do when withdrawing an amount that is too big" - how can it be too big?  Is there an overdraft limit?  There's no way to configure a limit in the API.
+- B: pretty simple.  Formatting?  Do we need a currency symbol (or, there is a generic symbol - https://en.wikipedia.org/wiki/Currency_sign_(generic) (U+00A4) - but if that's not well-known by the target audience it could cause confusion)
+- T: does "transactions" mean just D,W (and A,C?) - it won't show that you queried the balance in the past?
+- A must be required before any command that doesn't specify a name - so C,D,W,B,T are invalid without an A
+
+Interface:
+
+Guess we have two options:
+- commands are given as command-line parameters.  So two commands would mean running the program twice.  This would mean that we need to save state to disk or external storage.
+- commands are entered via STDIN.  This would let us keep everything in memory, but means that the text input processing is more complex.
+
+The presence of an A command seems to be leaning towards the second option, as it would be prety weird to have a "current user" state just permanently stored!  Or are we thinking to allow multiple commands as a long list of parameters?
+
+Also, this was supposed to be used for a web application, so is there some concept of "session" that the website would be supplying?  e.g. if that session had previously sent an A, then a subsequent command with the same session would be allowed to issue a B or T.
+
+Notes:
+- Time for a bike ride, thinking time before decision time!
+

@@ -113,3 +113,4 @@ Looks like std has a regular expression library, which seems like a good start f
 - Sub classes can be given a regex match list to use when processing a command
 - Need to store these as pointers not objects so that the subclassing is retained.
 - Suggest list<shared_ptr> since we'll be just be iterating through the list of commands
+

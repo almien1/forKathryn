@@ -9,7 +9,7 @@
 static const bool part1 = false;
 
 // Buffer size for DLL banking command responses
-constexpr auto MAX_RESPONSE_SIZE = 256;
+constexpr auto MAX_RESPONSE_SIZE = 1024; // Longest response is probably the help text (which may be removed as it's not in original requirements)
 
 int main()
 {

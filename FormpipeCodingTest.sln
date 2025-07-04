@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FormpipeCodingTest", "src\FormpipeCodingTest\FormpipeCodingTest.vcxproj", "{A19D3296-F248-436C-A2AE-115C9FDCF781}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A80DE046-14C3-4BB6-96D9-27F1A0D7355B} = {A80DE046-14C3-4BB6-96D9-27F1A0D7355B}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SupportingProject", "src\SupportingProject\SupportingProject.vcxproj", "{A80DE046-14C3-4BB6-96D9-27F1A0D7355B}"
 EndProject

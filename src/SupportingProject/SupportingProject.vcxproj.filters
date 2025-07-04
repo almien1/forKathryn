@@ -40,6 +40,9 @@
     <ClInclude Include="BankCommand.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="BankCommandOpen.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -61,6 +64,9 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="BankCommandHelp.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankCommandOpen.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

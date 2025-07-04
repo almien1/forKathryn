@@ -2,11 +2,13 @@
 
 // Command headers
 #include "BankCommandHelp.h"
+#include "BankCommandOpen.h"
 
 Banking::Banking()
 {
 	// Assign commands
 	m_commands.push_back(std::make_shared<BankCommandHelp>());
+	m_commands.push_back(std::make_shared<BankCommandOpen>());
 
 }
 
@@ -18,7 +20,7 @@ std::string Banking::command(const std::string& input)
 	{
 		if (command->recognise(input))
 		{
-			response = "You have been directed to module " + command->name();
+			response = command->handle(input);
 			handled = true;
 		}
 	}

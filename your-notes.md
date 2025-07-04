@@ -19,6 +19,7 @@ Issues
 - Casting to function pointer type doesn't work "can't convert far pointer to ..."
 	- needed dynamic_cast not static_cast, because the type-protection here is "trust me bro"
 	- probably ought to put the typedef into the DLL's header at some point, so DLL "owns" the definition
+		- done, #1656b3
 - Can't find function 
 	- check with DLL Export Viewer, looks like it's not exporting any functions.
 	- need to add dllexport (from config.h) to the helloWorldMessage declaration

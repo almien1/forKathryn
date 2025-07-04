@@ -1,4 +1,4 @@
 #pragma once
 #include "config.h"
 
-const wchar_t* helloWorldMessage();
+SUPPORTING_PROJECT_API const wchar_t* helloWorldMessage();

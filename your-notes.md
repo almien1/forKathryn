@@ -105,3 +105,11 @@ Downsides:
 Global variable in the DLL for now ("It is perfectly fine") - once the MVP is working we can 
 demo it as part of a discussion on long-term storage requirements.
 
+### Command handling
+
+Looks like std has a regular expression library, which seems like a good start for this text handling.
+
+- Base class can do standard stuff like "does this match"
+- Sub classes can be given a regex match list to use when processing a command
+- Need to store these as pointers not objects so that the subclassing is retained.
+- Suggest list<shared_ptr> since we'll be just be iterating through the list of commands

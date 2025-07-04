@@ -34,6 +34,12 @@
     <ClInclude Include="BankAccount.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="BankCommandHelp.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BankCommand.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -49,6 +55,12 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="BankAccount.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankCommand.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankCommandHelp.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

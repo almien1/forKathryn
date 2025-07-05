@@ -27,7 +27,6 @@ namespace Tests
 			Assert::AreEqual(string("Not a valid command."), bank.command("O"));
 		}
 
-
 		TEST_METHOD(Test003_OpenAccount)
 		{
 			Banking bank;
@@ -57,6 +56,24 @@ namespace Tests
 			Assert::AreEqual(string("Re-opening account \"person1\""), bank.command("O person1"));
 			Assert::AreEqual(string("Closing account \"person1\""), bank.command("C person1"));
 			Assert::AreEqual(string("Re-opening account \"person1\""), bank.command("O person1"));
+		}
+		TEST_METHOD(Test007_Activate)
+		{
+			Banking bank;
+			Assert::AreEqual(string("Could not activate account \"person1\" - doesn't exist."), bank.command("A person1"));
+			Assert::AreEqual(string("Opening account with name \"person1\""), bank.command("O person1"));
+			Assert::AreEqual(string("Activating account \"person1\""), bank.command("A person1"));
+			Assert::AreEqual(string("Closing account \"person1\""), bank.command("C person1"));
+			Assert::AreEqual(string("Could not activate closed account \"person1\"."), bank.command("A person1"));
+		}
+		TEST_METHOD(Test008_Deposit)
+		{
+			Banking bank;
+			Assert::AreEqual(string("Opening account with name \"person1\""), bank.command("O person1"));
+			Assert::AreEqual(string("Activating account \"person1\""), bank.command("A person1"));
+			Assert::AreEqual(string("Depositing £30 into selected account"), bank.command("D 30"));
+			Assert::AreEqual(string("Depositing £0 into selected account"), bank.command("D 0")); // 0 is a valid deposit?
+			// Note: the £ isn't displaying correctly on console
 		}
 
 	private:

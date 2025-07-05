@@ -24,9 +24,6 @@ public:
 	// Test whether a command should be handled by this module
 	bool recognise(const std::string& potentialCommand) const;
 
-	// Module name
-	virtual std::string name() const = 0;
-
 	// Handle a command
 	// - handle() is the main external API, and the base class will do regex processing
 	// - handleInternal() is then called with the fields extracted from the regular expression

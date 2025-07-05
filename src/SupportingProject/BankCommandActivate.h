@@ -1,9 +1,9 @@
 #pragma once
 #include "BankCommand.h"
-class BankCommandClose : public BankCommand
+class BankCommandActivate : public BankCommand
 {
 public:
-	BankCommandClose();
+	BankCommandActivate();
 
 protected:
 	BankEventPtr handleInternal(const BankCommandFieldList fields) override;

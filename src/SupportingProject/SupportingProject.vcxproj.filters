@@ -52,6 +52,21 @@
     <ClInclude Include="BankEventClose.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="BankCommandActivate.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BankCommandDeposit.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BankEventActivate.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BankEventDeposit.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BankingTypes.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -85,6 +100,18 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="BankEventClose.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankCommandDeposit.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankEventDeposit.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankCommandActivate.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankEventActivate.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

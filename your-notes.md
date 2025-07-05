@@ -173,8 +173,30 @@ I'm going to suggest the rather unusual step of making the BankData class with p
 data (i.e. a class used as a struct) so that we can forward-declare it to avoid the
 circular dependencies.
 
+#### Deposit
+
+At some point we're going to have to decide on a currency format, but for now let's start with
+[0-9]+ just to get the basics working.
+
+Probably ought to do this one to a fairly complete level before copying it to create withdraw
+classes, as they will be extremely similar (but would a base-class be too confusing?)
+
+The message looks a bit weird with just a plain number - maybe just use a £ sign for now
+and discuss it at the next stakeholder meeting.
+
+Currently the [0-9]+ is protecting us against invalid input, but if that ever changes, then
+we'll need some exception handling around the std::atol.  **TODO** this might need an extra
+pre-validate function in command classes - see discussion in `BankCommandDeposit::handleInternal`
+
+Requirements question: is a deposit of £0 valid?
+
+**TODO** something weird with the debug console - it can't display the £ symbol‽‽‽
+Is there some way to choose the code page for the console?  It does the same thing
+when running from a DOS prompt.
+
 # Next steps:
 
+- Sort out the mess in BankCommandDeposit::handleInternal
 - main() is getting large enough to make it a class.  Maybe remove the "part 1" stuff?
   (or create a branch from when it was first working)
 

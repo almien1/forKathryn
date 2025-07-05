@@ -3,12 +3,16 @@
 // Command headers
 #include "BankCommandOpen.h"
 #include "BankCommandClose.h"
+#include "BankCommandActivate.h"
+#include "BankCommandDeposit.h"
 
 Banking::Banking()
 {
 	// Assign commands
 	m_commands.push_back(std::make_shared<BankCommandOpen>());
 	m_commands.push_back(std::make_shared<BankCommandClose>());
+	m_commands.push_back(std::make_shared<BankCommandActivate>());
+	m_commands.push_back(std::make_shared<BankCommandDeposit>());
 
 }
 

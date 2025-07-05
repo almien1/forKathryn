@@ -115,6 +115,30 @@ Looks like std has a regular expression library, which seems like a good start f
 - Suggest list<shared_ptr> since we'll be just be iterating through the list of commands
 
 
+### Unit tests
+
+Google (gtest) and MStest are both easily available - been using gtest recently, so may as well learn
+the other one!
+
+- Remove precompiled headers to avoid clutter.  
+- Need to add `$(SolutionDir)\Build\` into the output folder to keep it in the same place as the rest.
+- (Same for intermediate files)
+- Setting dependency on SupportingProject isn't enough to bring in the functions
+- Adding a reference to SupportingProject isn't enough to bring in the functions
+- Adding the .lib as linker input isn't enough to bring in the functions
+- Apparently we need to declspec export to the class definition?  
+- So rearrange config.h to give definitions for "C function exports" and "general exports"
+
+Ok, unit tests are working - we can run a command and check the returned message.
+
+Additional documentation is at https://learn.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference?view=vs-2022
+
+Looks like it's displaying tests in alphabetical order rather than test order, which is annoying -
+maybe need a prefix on the test names, but it's a function name so can't start with a number
+so we need *another* prefix (eyeroll emoji)
+https://learn.microsoft.com/en-us/dotnet/core/testing/order-unit-tests?pivots=mstest
+
+
 # Next steps:
 
 - Get the unit-test project started - it should be able to test simple stuff like O name

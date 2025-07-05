@@ -1,9 +1,10 @@
 #pragma once
+#include "config.h"
 #include "BankAccount.h"
 #include "BankCommand.h"
 #include <string>
 
-class Banking
+class SUPPORTING_PROJECT_EXPORT Banking
 {
 public:
 	Banking();

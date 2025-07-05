@@ -6,8 +6,13 @@
 
 Banking::Banking()
 {
+	static const bool includeHelpOption = true;
+
 	// Assign commands
-	m_commands.push_back(std::make_shared<BankCommandHelp>());
+	if (includeHelpOption)
+	{
+		m_commands.push_back(std::make_shared<BankCommandHelp>());
+	}
 	m_commands.push_back(std::make_shared<BankCommandOpen>());
 
 }
@@ -26,7 +31,7 @@ std::string Banking::command(const std::string& input)
 	}
 	if (!handled)
 	{
-		response = "No modules found for handling this command";
+		response = "Not a valid command - use ? for help.";
 	}
 
 	return response;

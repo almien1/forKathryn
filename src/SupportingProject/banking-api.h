@@ -2,7 +2,7 @@
 #include "config.h"
 
 // DLL exports
-SUPPORTING_PROJECT_API void bankingCommand(const char *command, char *response, const size_t responseLen);
+SUPPORTING_PROJECT_C_API void bankingCommand(const char *command, char *response, const size_t responseLen);
 
 // Typedefs
 typedef char* bankingApiString;

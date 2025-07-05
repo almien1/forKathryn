@@ -156,9 +156,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BankCommand.h" />
+    <ClInclude Include="BankCommandClose.h" />
     <ClInclude Include="BankCommandOpen.h" />
     <ClInclude Include="BankData.h" />
     <ClInclude Include="BankEvent.h" />
+    <ClInclude Include="BankEventClose.h" />
     <ClInclude Include="BankEventOpen.h" />
     <ClInclude Include="Banking.h" />
     <ClInclude Include="config.h" />
@@ -168,9 +170,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BankCommand.cpp" />
+    <ClCompile Include="BankCommandClose.cpp" />
     <ClCompile Include="BankCommandOpen.cpp" />
     <ClCompile Include="BankData.cpp" />
     <ClCompile Include="BankEvent.cpp" />
+    <ClCompile Include="BankEventClose.cpp" />
     <ClCompile Include="BankEventOpen.cpp" />
     <ClCompile Include="banking-api.cpp" />
     <ClCompile Include="Banking.cpp" />

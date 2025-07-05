@@ -5,7 +5,15 @@
 #include <string>
 
 using BankAccountHistory = std::list<BankEventPtr>;
-using BankAccounts = std::map<std::string, BankAccountHistory>;
+
+class BankAccount
+{
+public:
+	bool closed;
+	BankAccountHistory history;
+};
+
+using BankAccounts = std::map<std::string, BankAccount>;
 
 class BankData
 {

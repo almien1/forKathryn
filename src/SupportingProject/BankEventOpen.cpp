@@ -12,15 +12,22 @@ void BankEventOpen::apply(BankData& bank)
 {
 	if (bank.accounts.contains(m_accountName))
 	{
-		// TODO: once "close" is implemented, we might want to allow re-opening
-		// (if exists and is still open, then give error)
-		m_description = std::format("Could not open account with name \"{}\" - already exists", m_accountName);
+		if (bank.accounts[m_accountName].closed)
+		{
+			m_description = std::format("Re-opening account \"{}\"", m_accountName);
+			bank.accounts[m_accountName].closed = false;
+		}
+		else
+		{
+			m_description = std::format("Could not open account with name \"{}\" - already exists", m_accountName);
+		}
 	}
 	else
 	{
 		m_description = std::format("Opening account with name \"{}\"", m_accountName);
-		BankAccountHistory newHistory;
-		newHistory.push_back(std::make_shared<BankEventOpen>(m_accountName));
-		bank.accounts[m_accountName] = newHistory;
+		BankAccount newAccount;
+		newAccount.closed = false;
+		newAccount.history.push_back(std::make_shared<BankEventOpen>(m_accountName));
+		bank.accounts[m_accountName] = newAccount;
 	}
 }

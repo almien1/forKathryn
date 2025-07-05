@@ -46,6 +46,12 @@
     <ClInclude Include="BankEventOpen.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="BankCommandClose.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BankEventClose.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -73,6 +79,12 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="BankEventOpen.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankCommandClose.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankEventClose.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

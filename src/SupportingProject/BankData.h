@@ -7,8 +7,9 @@
 using BankAccountHistory = std::list<BankEventPtr>;
 using BankAccounts = std::map<std::string, BankAccountHistory>;
 
-typedef struct
+class BankData
 {
+public:
 	std::string selectedAccount;
 	BankAccounts accounts;
-} BankData;
+};

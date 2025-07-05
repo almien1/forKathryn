@@ -165,6 +165,18 @@ a copy of itself to store.
 
 This also means we need to get rid of the help menu as it's not an actual event.
 
+Issue: The massive fail when adding events seems to be a circular loop of dependencies - 
+events need to access the bank data to apply their changes, but bank data needs access
+to events so that it can store them.
+
+I'm going to suggest the rather unusual step of making the BankData class with public
+data (i.e. a class used as a struct) so that we can forward-declare it to avoid the
+circular dependencies.
+
+I guess once this is working, a neater way might be the other way around - forward-declare
+BankEvent since that's a regular old class, and it only needs changing one file.  Probably
+best to get it all compiling again first before doing that.
+
 # Next steps:
 
 - main() is getting large enough to make it a class.  Maybe remove the "part 1" stuff?

@@ -44,7 +44,7 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="BankEventOpen.h">
-      <Filter>Api</Filter>
+      <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

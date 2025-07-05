@@ -39,6 +39,16 @@ namespace Tests
 			Banking bank;
 			Assert::AreEqual(string("Opening account with name \"abcd efg\""), bank.command("O abcd efg"));
 		}
+
+		TEST_METHOD(Test005_RepeatedOpenAccount)
+		{
+			Banking bank;
+			Assert::AreEqual(string("Opening account with name \"person1\""), bank.command("O person1"));
+			Assert::AreEqual(string("Opening account with name \"person2\""), bank.command("O person2"));
+			Assert::AreEqual(string("Could not open account with name \"person2\" - already exists"), bank.command("O person2"));
+			Assert::AreEqual(string("Opening account with name \"person3\""), bank.command("O person3"));
+		}
+
 	private:
 		bool strContains(const string haystack, const string needle)
 		{

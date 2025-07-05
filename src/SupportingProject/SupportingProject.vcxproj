@@ -157,7 +157,6 @@
   <ItemGroup>
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="BankCommand.h" />
-    <ClInclude Include="BankCommandHelp.h" />
     <ClInclude Include="BankCommandOpen.h" />
     <ClInclude Include="Banking.h" />
     <ClInclude Include="config.h" />
@@ -168,7 +167,6 @@
   <ItemGroup>
     <ClCompile Include="BankAccount.cpp" />
     <ClCompile Include="BankCommand.cpp" />
-    <ClCompile Include="BankCommandHelp.cpp" />
     <ClCompile Include="BankCommandOpen.cpp" />
     <ClCompile Include="banking-api.cpp" />
     <ClCompile Include="Banking.cpp" />

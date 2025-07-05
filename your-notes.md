@@ -148,10 +148,25 @@ things, I'll probably just note that this works well enough to not be introducin
 with unicode input, but won't leave the test in because it would give a load of compiler warnings 
 about characters not being displayable.
 
+### Events
+
+I guess command() returns an event, and event() can return a message to say what happened?
+
+Each event will probably need to know what account it's associated with, so we have
+a couple of options:
+
+- events in one list, that would need to be filtered to display events from an account
+- events in each account.  So "open" wouldn't just create an empty account, it would
+  create an account and then add itself to the account as the first event.
+
+Issue is, how does an event put itself in the account structure, because it doesn't know
+whether its own memory is persistent (how long \*this will last) - maybe it needs to create
+a copy of itself to store.
+
+This also means we need to get rid of the help menu as it's not an actual event.
 
 # Next steps:
 
-- Get the unit-test project started - it should be able to test simple stuff like O name
 - main() is getting large enough to make it a class.  Maybe remove the "part 1" stuff?
   (or create a branch from when it was first working)
 

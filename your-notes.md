@@ -138,6 +138,8 @@ maybe need a prefix on the test names, but it's a function name so can't start w
 so we need *another* prefix (eyeroll emoji)
 https://learn.microsoft.com/en-us/dotnet/core/testing/order-unit-tests?pivots=mstest
 
+Maybe want a two-part prefix like A001,A001 for one command, B001,B002 for the next command so
+we don't need to renumber things if going back to add unit tests into the earlier work.
 
 # Next steps:
 

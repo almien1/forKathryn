@@ -49,6 +49,20 @@ namespace Tests
 			Banking bank;
 			Assert::AreEqual(string("Not a valid command - use ? for help."), bank.command("O"));
 		}
+
+
+		TEST_METHOD(Test004_OpenAccount)
+		{
+			Banking bank;
+			Assert::AreEqual(string("Opening account with name \"abcd\""), bank.command("O abcd"));
+		}
+
+		TEST_METHOD(Test005_OpenAccountWithSpaceInTheName)
+		{
+			Banking bank;
+			Assert::AreEqual(string("Opening account with name \"abcd efg\""), bank.command("O abcd efg"));
+		}
+
 	private:
 		bool strContains(const string haystack, const string needle)
 		{

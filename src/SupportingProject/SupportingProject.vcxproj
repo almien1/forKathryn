@@ -155,9 +155,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="BankAccount.h" />
     <ClInclude Include="BankCommand.h" />
     <ClInclude Include="BankCommandOpen.h" />
+    <ClInclude Include="BankData.h" />
+    <ClInclude Include="BankEvent.h" />
     <ClInclude Include="Banking.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="framework.h" />
@@ -165,9 +166,10 @@
     <ClInclude Include="hello-world.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BankAccount.cpp" />
     <ClCompile Include="BankCommand.cpp" />
     <ClCompile Include="BankCommandOpen.cpp" />
+    <ClCompile Include="BankData.cpp" />
+    <ClCompile Include="BankEvent.cpp" />
     <ClCompile Include="banking-api.cpp" />
     <ClCompile Include="Banking.cpp" />
     <ClCompile Include="dllmain.cpp" />

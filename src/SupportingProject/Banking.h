@@ -1,7 +1,7 @@
 #pragma once
 #include "config.h"
-#include "BankAccount.h"
 #include "BankCommand.h"
+#include "BankData.h"
 #include <string>
 
 class SUPPORTING_PROJECT_EXPORT Banking
@@ -12,8 +12,7 @@ public:
 	std::string command(const std::string& input);
 
 protected:
-	BankAccounts m_bankAccounts;
-
+	BankData m_bank;
 	BankCommands m_commands;
 };
 

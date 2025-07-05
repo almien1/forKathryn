@@ -31,14 +31,17 @@
     <ClInclude Include="Banking.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="BankAccount.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="BankCommand.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="BankCommandOpen.h">
       <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BankData.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BankEvent.h">
+      <Filter>Api</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -54,13 +57,16 @@
     <ClCompile Include="Banking.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="BankAccount.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
     <ClCompile Include="BankCommand.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="BankCommandOpen.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankData.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankEvent.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

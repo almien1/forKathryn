@@ -1,9 +1,10 @@
 #include "BankCommandOpen.h"
+#include "BankEventOpen.h"
 
 BankCommandOpen::BankCommandOpen() : 
 	BankCommand("O (.*)")
 {
-
+	// "-O name : Create account with name(O = open)"
 }
 
 std::string BankCommandOpen::name() const
@@ -11,7 +12,7 @@ std::string BankCommandOpen::name() const
 	return("Open account");
 }
 
-std::string BankCommandOpen::handleInternal(const BankCommandFieldList fields, const std::string fullCommand)
+BankEventPtr BankCommandOpen::handleInternal(const BankCommandFieldList fields)
 {
-	return std::string("Opening account with name \"") + fields[1].str() + std::string("\"");
+	return std::make_shared<BankEventOpen>(fields[1].str());
 }

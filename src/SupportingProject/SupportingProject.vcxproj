@@ -159,6 +159,7 @@
     <ClInclude Include="BankCommandOpen.h" />
     <ClInclude Include="BankData.h" />
     <ClInclude Include="BankEvent.h" />
+    <ClInclude Include="BankEventOpen.h" />
     <ClInclude Include="Banking.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="framework.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="BankCommandOpen.cpp" />
     <ClCompile Include="BankData.cpp" />
     <ClCompile Include="BankEvent.cpp" />
+    <ClCompile Include="BankEventOpen.cpp" />
     <ClCompile Include="banking-api.cpp" />
     <ClCompile Include="Banking.cpp" />
     <ClCompile Include="dllmain.cpp" />

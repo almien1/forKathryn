@@ -41,6 +41,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="BankEvent.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BankEventOpen.h">
       <Filter>Api</Filter>
     </ClInclude>
   </ItemGroup>
@@ -67,6 +70,9 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="BankEvent.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BankEventOpen.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

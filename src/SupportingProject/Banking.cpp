@@ -18,7 +18,8 @@ std::string Banking::command(const std::string& input)
 	{
 		if (command->recognise(input))
 		{
-			response = command->handle(input);
+			BankEventPtr event = command->handle(input);
+			response = event->description();
 			handled = true;
 		}
 	}

@@ -1,4 +1,5 @@
 #pragma once
+#include "BankEvent.h"
 #include <regex>
 #include <list>
 #include <memory>
@@ -21,7 +22,7 @@ public:
 	BankCommand(const char* commandRegexPattern);
 
 	// Test whether a command should be handled by this module
-	bool recognise(const std::string& potentialCommand);
+	bool recognise(const std::string& potentialCommand) const;
 
 	// Module name
 	virtual std::string name() const = 0;
@@ -29,16 +30,13 @@ public:
 	// Handle a command
 	// - handle() is the main external API, and the base class will do regex processing
 	// - handleInternal() is then called with the fields extracted from the regular expression
-	// 
-	// - Note the "fullCommand" parameter should *rarely* be used 
-	// - the fields will have been processed and are available in the "fields" parameter
-	std::string handle(const std::string command);
+	BankEventPtr handle(const std::string command);
 
 protected:
 	std::regex m_commandRegex;
 
 	using BankCommandFieldList = std::match_results<std::string::const_iterator>;
-	virtual std::string handleInternal(const BankCommandFieldList fields, const std::string fullCommand) = 0;
+	virtual BankEventPtr handleInternal(const BankCommandFieldList fields) = 0;
 
 };
 

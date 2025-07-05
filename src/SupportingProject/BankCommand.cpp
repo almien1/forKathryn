@@ -6,21 +6,21 @@ BankCommand::BankCommand(const char* commandRegexPattern) :
 {
 }
 
-bool BankCommand::recognise(const std::string& potentialCommand)
+bool BankCommand::recognise(const std::string& potentialCommand) const
 {
 	bool matched = std::regex_match(potentialCommand, m_commandRegex);
 	return matched;
 }
 
-std::string BankCommand::handle(const std::string command)
+BankEventPtr BankCommand::handle(const std::string command)
 {
-	std::string result;
+	BankEventPtr result;
 	BankCommandFieldList fields;
 
 	// This should always match, as we will have called recognise() first
 	if (std::regex_match(command, fields, m_commandRegex))
 	{
-		result = handleInternal(fields, command);
+		result = handleInternal(fields);
 	}
 	else
 	{

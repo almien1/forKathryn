@@ -8,9 +8,7 @@ public:
 	std::string name() const override;
 
 protected:
-	std::string handleInternal(const BankCommandFieldList fields, const std::string fullCommand) override;
+	BankEventPtr handleInternal(const BankCommandFieldList fields) override;
 
-
-	// "-O name : Create account with name(O = open)"
 };
 

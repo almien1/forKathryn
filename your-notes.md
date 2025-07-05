@@ -126,7 +126,7 @@ the other one!
 - Setting dependency on SupportingProject isn't enough to bring in the functions
 - Adding a reference to SupportingProject isn't enough to bring in the functions
 - Adding the .lib as linker input isn't enough to bring in the functions
-- Apparently we need to declspec export to the class definition?  
+- Apparently we need to declspec export the class header?  
 - So rearrange config.h to give definitions for "C function exports" and "general exports"
 
 Ok, unit tests are working - we can run a command and check the returned message.
@@ -140,6 +140,14 @@ https://learn.microsoft.com/en-us/dotnet/core/testing/order-unit-tests?pivots=ms
 
 Maybe want a two-part prefix like A001,A001 for one command, B001,B002 for the next command so
 we don't need to renumber things if going back to add unit tests into the earlier work.
+
+Briefly tested unicode names, but visual studio's debug console's code page doesn't support it -
+e.g. "O 単体テスト" gives "opening account with name ?????".  The unit test works correctly
+though and returns "opening account with name 単体テスト.  Given the notes about not overanalysing 
+things, I'll probably just note that this works well enough to not be introducing vulnerabilities 
+with unicode input, but won't leave the test in because it would give a load of compiler warnings 
+about characters not being displayable.
+
 
 # Next steps:
 

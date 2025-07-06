@@ -194,6 +194,13 @@ Requirements question: is a deposit of £0 valid?
 Is there some way to choose the code page for the console?  It does the same thing
 when running from a DOS prompt.
 
+### Withdraw
+
+Effectively same as deposit.  Don't just reuse the same classes though, as they will probably
+grow over time to include a lot more code specific to that type of transaction.
+
+
+
 # Next steps:
 
 - Sort out the mess in BankCommandDeposit::handleInternal

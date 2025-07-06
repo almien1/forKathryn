@@ -82,6 +82,15 @@ namespace Tests
 			Assert::AreEqual(string("Not a valid command."), bank.command("D 999999999999")); // Too large for a long int
 			// Note: this test may need to be changed if the currency format changes to floating point
 		}
+		TEST_METHOD(Test010_Withdraw)
+		{
+			Banking bank;
+			Assert::AreEqual(string("Opening account with name \"person1\""), bank.command("O person1"));
+			Assert::AreEqual(string("Activating account \"person1\""), bank.command("A person1"));
+			Assert::AreEqual(string("Withdrawing 30 from selected account"), bank.command("W 30"));
+			Assert::AreEqual(string("Withdrawing 0 from selected account"), bank.command("W 0"));
+			Assert::AreEqual(string("Not a valid command."), bank.command("W 999999999999"));
+		}
 	private:
 		bool strContains(const string haystack, const string needle)
 		{

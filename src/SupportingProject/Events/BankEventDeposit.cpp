@@ -24,3 +24,9 @@ void BankEventDeposit::apply(BankData& bank)
 		bank.accounts[bank.selectedAccount].history.push_back(std::make_shared<BankEventDeposit>(m_amount));
 	}
 }
+
+Currency BankEventDeposit::balanceAdjust(const Currency previousBalance) const
+{
+	// Deposits add to account balance
+	return previousBalance + m_amount;
+}

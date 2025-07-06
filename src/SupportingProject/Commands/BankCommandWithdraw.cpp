@@ -1,5 +1,5 @@
 #include "BankCommandWithdraw.h"
-#include "Events/BankEventwithdraw.h"
+#include "Events/BankEventWithdraw.h"
 
 BankCommandWithdraw::BankCommandWithdraw() :
 	BankCommand("W ([0-9]+)")

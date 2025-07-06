@@ -199,7 +199,13 @@ when running from a DOS prompt.
 Effectively same as deposit.  Don't just reuse the same classes though, as they will probably
 grow over time to include a lot more code specific to that type of transaction.
 
+### Balance
 
+Looks like it's time for the event base class to become banking-specific - we can either 
+set it up that code can ask BankEvent for information, or the other way around - have a 
+"account current state" class (current balance as of the transactions processed thus far)
+that BankEvent can adjust.  First one sounds simpler for me, although the second might be
+preferable if we end up needing a lot more commands to do different things.
 
 # Next steps:
 

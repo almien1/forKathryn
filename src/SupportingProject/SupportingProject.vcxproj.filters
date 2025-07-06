@@ -85,6 +85,12 @@
     <ClInclude Include="Events\BankEventWithdraw.h">
       <Filter>Headers\Events</Filter>
     </ClInclude>
+    <ClInclude Include="Commands\BankCommandBalance.h">
+      <Filter>Headers\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Events\BankEventBalance.h">
+      <Filter>Headers\Events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -132,11 +138,17 @@
     <ClCompile Include="Events\BankEventOpen.cpp">
       <Filter>Sources\Events</Filter>
     </ClCompile>
+    <ClCompile Include="Commands\BankCommandBalance.cpp">
+      <Filter>Sources\Commands</Filter>
+    </ClCompile>
     <ClCompile Include="Commands\BankCommandWithdraw.cpp">
-      <Filter>Sources</Filter>
+      <Filter>Sources\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Events\BankEventBalance.cpp">
+      <Filter>Sources\Events</Filter>
     </ClCompile>
     <ClCompile Include="Events\BankEventWithdraw.cpp">
-      <Filter>Sources</Filter>
+      <Filter>Sources\Events</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

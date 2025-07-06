@@ -6,6 +6,7 @@
 #include "Commands/BankCommandActivate.h"
 #include "Commands/BankCommandDeposit.h"
 #include "Commands/BankCommandWithdraw.h"
+#include "Commands/BankCommandBalance.h"
 
 Banking::Banking()
 {
@@ -15,6 +16,7 @@ Banking::Banking()
 	m_commands.push_back(std::make_shared<BankCommandActivate>());
 	m_commands.push_back(std::make_shared<BankCommandDeposit>());
 	m_commands.push_back(std::make_shared<BankCommandWithdraw>());
+	m_commands.push_back(std::make_shared<BankCommandBalance>());
 
 }
 

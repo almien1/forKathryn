@@ -91,6 +91,22 @@ namespace Tests
 			Assert::AreEqual(string("Withdrawing 0 from selected account"), bank.command("W 0"));
 			Assert::AreEqual(string("Not a valid command."), bank.command("W 999999999999"));
 		}
+		TEST_METHOD(Test011_Balance)
+		{
+			Banking bank;
+			Assert::AreEqual(string("No account selected."), bank.command("B"));
+			Assert::AreEqual(string("Opening account with name \"person1\""), bank.command("O person1"));
+			Assert::AreEqual(string("Activating account \"person1\""), bank.command("A person1"));
+			Assert::AreEqual(string("Depositing 30 into selected account"), bank.command("D 30"));
+			Assert::AreEqual(string("Balance is 30"), bank.command("B"));
+			Assert::AreEqual(string("Depositing 66 into selected account"), bank.command("D 66"));
+			Assert::AreEqual(string("Balance is 96"), bank.command("B"));
+			Assert::AreEqual(string("Withdrawing 12 from selected account"), bank.command("W 12"));
+			Assert::AreEqual(string("Balance is 84"), bank.command("B"));
+			Assert::AreEqual(string("Closing account \"person1\""), bank.command("C person1"));
+			Assert::AreEqual(string("Account is closed."), bank.command("B"));
+		}
+
 	private:
 		bool strContains(const string haystack, const string needle)
 		{

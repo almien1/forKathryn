@@ -10,6 +10,8 @@ public:
 
 	void apply(BankData& bank) override;
 
+	Currency balanceAdjust(const Currency previousBalance) const override;
+
 private:
 	Currency m_amount;
 };

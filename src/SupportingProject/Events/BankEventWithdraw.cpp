@@ -24,3 +24,9 @@ void BankEventWithdraw::apply(BankData& bank)
 		bank.accounts[bank.selectedAccount].history.push_back(std::make_shared<BankEventWithdraw>(m_amount));
 	}
 }
+
+Currency BankEventWithdraw::balanceAdjust(const Currency previousBalance) const
+{
+	// Withdrawals subtract from account balance
+	return previousBalance - m_amount;
+}

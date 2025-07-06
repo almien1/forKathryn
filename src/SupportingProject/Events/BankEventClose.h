@@ -9,6 +9,8 @@ public:
 
 	void apply(BankData& bank) override;
 
+	Currency balanceAdjust(const Currency previousBalance) const override;
+
 private:
 	std::string m_accountName;
 };

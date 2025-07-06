@@ -55,6 +55,7 @@ Quick requirements analysis:
 - A: This implies that the application state needs a "currently selected account" field
 - C: I guess this means no further actions can be done on that account
 - C: Should it be possible to open another account with the same name?  i.e. do we delete the account, or just mark it as closed?  If it can be marked as closed, can O open the account again?
+- C: Should C invalidate the A?  Is the account still selected after you close it?
 - D: pretty simple.  I guess we're using a single abstract currency.  Do we need to care about how currency is stored - e.g. ones with very large numbers like vietnam.  Do we need to use integer methods because it's currency or is floating point okay in this case?
 - W: looks like a conflict between two requirements: 
 	- "just assume that overdrawing is okay"
@@ -206,6 +207,9 @@ set it up that code can ask BankEvent for information, or the other way around -
 "account current state" class (current balance as of the transactions processed thus far)
 that BankEvent can adjust.  First one sounds simpler for me, although the second might be
 preferable if we end up needing a lot more commands to do different things.
+
+Might be some requirements questions around what the balance should show when accounts
+are closed - does it go to zero, or does the money have to be transferred somewhere.
 
 # Next steps:
 

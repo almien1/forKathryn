@@ -16,6 +16,18 @@
     <Filter Include="Headers">
       <UniqueIdentifier>{65cf552d-849a-48c6-8b3c-b294df2ab35d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Commands">
+      <UniqueIdentifier>{cf0b75a1-0b5b-401d-9c7f-ed9fde546478}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Events">
+      <UniqueIdentifier>{62e396f5-5428-4db7-a4ba-57687a625cb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Commands">
+      <UniqueIdentifier>{9ba5136c-66b6-4d55-807e-c29fb19c2440}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Events">
+      <UniqueIdentifier>{e4914a9f-5029-4c05-a459-53319f650e7c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hello-world.h">
@@ -34,38 +46,38 @@
     <ClInclude Include="BankCommand.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="BankCommandOpen.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="BankData.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="BankEvent.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="BankEventOpen.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BankCommandClose.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BankEventClose.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BankCommandActivate.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BankCommandDeposit.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BankEventActivate.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BankEventDeposit.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="BankingTypes.h">
       <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\BankCommandActivate.h">
+      <Filter>Headers\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\BankCommandClose.h">
+      <Filter>Headers\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\BankCommandDeposit.h">
+      <Filter>Headers\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\BankCommandOpen.h">
+      <Filter>Headers\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Events\BankEventActivate.h">
+      <Filter>Headers\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Events\BankEventClose.h">
+      <Filter>Headers\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Events\BankEventDeposit.h">
+      <Filter>Headers\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Events\BankEventOpen.h">
+      <Filter>Headers\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -81,38 +93,38 @@
     <ClCompile Include="Banking.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="BankCommand.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="BankCommandOpen.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
     <ClCompile Include="BankData.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="BankEvent.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="BankEventOpen.cpp">
+    <ClCompile Include="Commands\BankCommandActivate.cpp">
+      <Filter>Sources\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\BankCommandClose.cpp">
+      <Filter>Sources\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\BankCommandDeposit.cpp">
+      <Filter>Sources\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\BankCommandOpen.cpp">
+      <Filter>Sources\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="BankCommand.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="BankCommandClose.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Events\BankEventActivate.cpp">
+      <Filter>Sources\Events</Filter>
     </ClCompile>
-    <ClCompile Include="BankEventClose.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Events\BankEventClose.cpp">
+      <Filter>Sources\Events</Filter>
     </ClCompile>
-    <ClCompile Include="BankCommandDeposit.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Events\BankEventDeposit.cpp">
+      <Filter>Sources\Events</Filter>
     </ClCompile>
-    <ClCompile Include="BankEventDeposit.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="BankCommandActivate.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="BankEventActivate.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Events\BankEventOpen.cpp">
+      <Filter>Sources\Events</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

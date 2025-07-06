@@ -9,7 +9,7 @@ using BankAccountHistory = std::list<BankEventPtr>;
 class BankAccount
 {
 public:
-	bool closed;
+	bool closed = false;
 	BankAccountHistory history;
 };
 

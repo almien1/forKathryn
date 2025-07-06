@@ -1,10 +1,10 @@
 #include "Banking.h"
 
 // Command headers
-#include "BankCommandOpen.h"
-#include "BankCommandClose.h"
-#include "BankCommandActivate.h"
-#include "BankCommandDeposit.h"
+#include "Commands/BankCommandOpen.h"
+#include "Commands/BankCommandClose.h"
+#include "Commands/BankCommandActivate.h"
+#include "Commands/BankCommandDeposit.h"
 
 Banking::Banking()
 {

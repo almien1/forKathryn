@@ -4,15 +4,7 @@
 #include <list>
 #include <memory>
 
-/* Note: Copy these to each subclass header to get started
-
-public:
-	std::string name() const override;
-protected:
-	std::string handleInternal(const BankCommandFieldList fields, const std::string fullCommand) override;
-
-*/
-
+using BankCommandFieldList = std::match_results<std::string::const_iterator>;
 
 class BankCommand
 {
@@ -32,8 +24,8 @@ public:
 protected:
 	std::regex m_commandRegex;
 
-	using BankCommandFieldList = std::match_results<std::string::const_iterator>;
-	virtual BankEventPtr handleInternal(const BankCommandFieldList fields) = 0;
+	virtual bool canHandle(const BankCommandFieldList fields) const;
+	virtual BankEventPtr handleInternal(const BankCommandFieldList fields) const = 0;
 
 };
 

@@ -71,11 +71,17 @@ namespace Tests
 			Banking bank;
 			Assert::AreEqual(string("Opening account with name \"person1\""), bank.command("O person1"));
 			Assert::AreEqual(string("Activating account \"person1\""), bank.command("A person1"));
-			Assert::AreEqual(string("Depositing £30 into selected account"), bank.command("D 30"));
-			Assert::AreEqual(string("Depositing £0 into selected account"), bank.command("D 0")); // 0 is a valid deposit?
-			// Note: the £ isn't displaying correctly on console
+			Assert::AreEqual(string("Depositing 30 into selected account"), bank.command("D 30"));
+			Assert::AreEqual(string("Depositing 0 into selected account"), bank.command("D 0")); // 0 is a valid deposit?
 		}
-
+		TEST_METHOD(Test009_InvalidNumbers)
+		{
+			Banking bank;
+			Assert::AreEqual(string("Opening account with name \"person1\""), bank.command("O person1"));
+			Assert::AreEqual(string("Activating account \"person1\""), bank.command("A person1"));
+			Assert::AreEqual(string("Not a valid command."), bank.command("D 999999999999")); // Too large for a long int
+			// Note: this test may need to be changed if the currency format changes to floating point
+		}
 	private:
 		bool strContains(const string haystack, const string needle)
 		{

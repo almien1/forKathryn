@@ -1,5 +1,5 @@
 #include "BankCommandClose.h"
-#include "BankEventClose.h"
+#include "Events/BankEventClose.h"
 
 BankCommandClose::BankCommandClose() :
 	BankCommand("C (.*)")
@@ -7,7 +7,7 @@ BankCommandClose::BankCommandClose() :
 	// "- C : Close account (C = Close)"
 }
 
-BankEventPtr BankCommandClose::handleInternal(const BankCommandFieldList fields)
+BankEventPtr BankCommandClose::handleInternal(const BankCommandFieldList fields) const
 {
 	return std::make_shared<BankEventClose>(fields[1].str());
 }

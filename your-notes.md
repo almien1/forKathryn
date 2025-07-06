@@ -200,10 +200,6 @@ when running from a DOS prompt.
 - main() is getting large enough to make it a class.  Maybe remove the "part 1" stuff?
   (or create a branch from when it was first working)
 
-Then we can start to think about a command design - I guess the "state" is the "BankAccounts" 
-typedef (we could clarify this by making another typedef) so it would be something like 
-"BankCommand::handleInternal -> BankingEvent(BankAccounts &state, ...)"
-
 Are we allowed to just manipulate m_bankAccounts after each command, or is there supposed to 
 be some "const currentState -> nextState" type structure?  ("Decider pattern" isn't listed on 
 https://en.wikipedia.org/wiki/Software_design_pattern but apparently ChatGPT can provide advice)

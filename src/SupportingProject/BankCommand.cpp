@@ -8,8 +8,25 @@ BankCommand::BankCommand(const char* commandRegexPattern) :
 
 bool BankCommand::recognise(const std::string& potentialCommand) const
 {
-	bool matched = std::regex_match(potentialCommand, m_commandRegex);
-	return matched;
+	bool validCommand = false;
+	// Check whether it matches the regex
+	BankCommandFieldList fields;
+	if (std::regex_match(potentialCommand, fields, m_commandRegex))
+	{
+		// If so, check whether the fields are valid for this type of command
+		if (canHandle(fields))
+		{
+			validCommand = true;
+		}
+	}
+	return validCommand;
+}
+
+bool BankCommand::canHandle(const BankCommandFieldList fields) const
+{
+	// Assume that a command can handle anything that matches its regular-
+	// expression unless they define a canHandle function
+	return true;
 }
 
 BankEventPtr BankCommand::handle(const std::string command)

@@ -6,7 +6,7 @@ public:
 	BankCommandOpen();
 
 protected:
-	BankEventPtr handleInternal(const BankCommandFieldList fields) override;
+	BankEventPtr handleInternal(const BankCommandFieldList fields) const override;
 
 };
 

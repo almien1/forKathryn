@@ -36,6 +36,8 @@ Result:
 	- Maybe change "\r\n" to std::endl - I guess "\n" was being expanded to the two-byte version
 	- Okay now we have a "Windows style" output with a single line.
 
+Note: the code demonstrating this "hello world" has been moved to the "part1" branch - switch to that
+branch and "rebuild all" to see the hello world example working.
 
 ## Event handler
 
@@ -226,11 +228,6 @@ least the first time that the DLL itself has needed to choose a newline style)
 
 # Next steps:
 
-- Sort out the mess in BankCommandDeposit::handleInternal
 - main() is getting large enough to make it a class.  Maybe remove the "part 1" stuff?
   (or create a branch from when it was first working)
-
-Are we allowed to just manipulate m_bankAccounts after each command, or is there supposed to 
-be some "const currentState -> nextState" type structure?  ("Decider pattern" isn't listed on 
-https://en.wikipedia.org/wiki/Software_design_pattern but apparently ChatGPT can provide advice)
 

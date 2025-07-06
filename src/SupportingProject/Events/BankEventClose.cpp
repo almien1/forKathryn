@@ -31,3 +31,14 @@ Currency BankEventClose::balanceAdjust(const Currency previousBalance) const
 	// Set the balance to 0 on account closure
 	return 0;
 }
+
+
+bool BankEventClose::showInTransactionHistory() const
+{
+	return true;
+}
+
+TransactionDescription BankEventClose::descriptionForTransactionHistory() const
+{
+	return "Account closed";
+}

@@ -30,3 +30,13 @@ Currency BankEventWithdraw::balanceAdjust(const Currency previousBalance) const
 	// Withdrawals subtract from account balance
 	return previousBalance - m_amount;
 }
+
+bool BankEventWithdraw::showInTransactionHistory() const
+{
+	return true;
+}
+
+TransactionDescription BankEventWithdraw::descriptionForTransactionHistory() const
+{
+	return std::format("Withdrew {}", m_amount);
+}

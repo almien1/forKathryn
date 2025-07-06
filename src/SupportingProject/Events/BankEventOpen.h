@@ -9,6 +9,9 @@ public:
 
 	void apply(BankData& bank) override;
 
+	bool showInTransactionHistory() const override;
+	TransactionDescription descriptionForTransactionHistory() const override;
+
 private:
 	std::string m_accountName;
 };

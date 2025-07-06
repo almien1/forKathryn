@@ -211,6 +211,16 @@ preferable if we end up needing a lot more commands to do different things.
 Might be some requirements questions around what the balance should show when accounts
 are closed - does it go to zero, or does the money have to be transferred somewhere.
 
+### Transactions
+
+Similar to balance, except it's adding to a multi-line string instead of adding to the number.
+
+At some point we're going to need to sort out the issue with returning long strings over the
+DLL interface - this command is the first one that can generate arbitrarily-long text!
+
+This is also the first time we need to consider newline style for the returned strings (or at
+least the first time that the DLL itself has needed to choose a newline style)
+
 # Next steps:
 
 - Sort out the mess in BankCommandDeposit::handleInternal

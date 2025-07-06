@@ -119,7 +119,24 @@ namespace Tests
 			Assert::AreEqual(string("Re-opening account \"person1\""), bank.command("O person1"));
 			Assert::AreEqual(string("Balance is 0"), bank.command("B"));
 		}
+		TEST_METHOD(Test013_TransactionHistory)
+		{
+			Banking bank;
+			Assert::AreEqual(string("Opening account with name \"person1\""), bank.command("O person1"));
+			Assert::AreEqual(string("Activating account \"person1\""), bank.command("A person1"));
+			Assert::AreEqual(string("Depositing 30 into selected account"), bank.command("D 30"));
+			Assert::AreEqual(string("Account opened\nDeposited 30"), bank.command("T"));
 
+			Assert::AreEqual(string("Balance is 30"), bank.command("B")); // this should not get shown in the history
+
+			Assert::AreEqual(string("Withdrawing 15 from selected account"), bank.command("W 15"));
+			Assert::AreEqual(string("Closing account \"person1\""), bank.command("C person1"));
+			Assert::AreEqual(string("Re-opening account \"person1\""), bank.command("O person1"));
+			Assert::AreEqual(string("Depositing 9 into selected account"), bank.command("D 9"));
+			Assert::AreEqual(string("Account opened\nDeposited 30\nWithdrew 15\nAccount closed\nAccount opened\nDeposited 9"), bank.command("T"));
+
+			Assert::AreEqual(string("Balance is 9"), bank.command("B"));
+		}
 	private:
 		bool strContains(const string haystack, const string needle)
 		{

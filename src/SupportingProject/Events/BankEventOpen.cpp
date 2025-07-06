@@ -16,6 +16,7 @@ void BankEventOpen::apply(BankData& bank)
 		{
 			m_description = std::format("Re-opening account \"{}\"", m_accountName);
 			bank.accounts[m_accountName].closed = false;
+			bank.accounts[m_accountName].history.push_back(std::make_shared<BankEventOpen>(m_accountName));
 		}
 		else
 		{
@@ -31,3 +32,14 @@ void BankEventOpen::apply(BankData& bank)
 		bank.accounts[m_accountName] = newAccount;
 	}
 }
+
+bool BankEventOpen::showInTransactionHistory() const
+{
+	return true;
+}
+
+TransactionDescription BankEventOpen::descriptionForTransactionHistory() const
+{
+	return "Account opened";
+}
+

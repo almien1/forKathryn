@@ -5,6 +5,8 @@
 
 class BankData;
 
+using TransactionDescription = std::string;
+
 class BankEvent
 {
 public:
@@ -13,6 +15,10 @@ public:
 
 	// Override this if the event changes the account balance
 	virtual Currency balanceAdjust(const Currency previousBalance) const;
+
+	// Override these to list the transaction in the account history
+	virtual bool showInTransactionHistory() const;
+	virtual TransactionDescription descriptionForTransactionHistory() const;
 
 protected:
 	std::string m_description;

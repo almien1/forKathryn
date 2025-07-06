@@ -1,7 +1,5 @@
 #pragma once
 #include "BankEvent.h"
-#include "BankingTypes.h"
-#include <string>
 
 class BankEventDeposit : public BankEvent
 {
@@ -11,6 +9,9 @@ public:
 	void apply(BankData& bank) override;
 
 	Currency balanceAdjust(const Currency previousBalance) const override;
+
+	bool showInTransactionHistory() const override;
+	TransactionDescription descriptionForTransactionHistory() const override;
 
 private:
 	Currency m_amount;

@@ -165,6 +165,7 @@
     <ClInclude Include="Commands\BankCommandClose.h" />
     <ClInclude Include="Commands\BankCommandDeposit.h" />
     <ClInclude Include="Commands\BankCommandOpen.h" />
+    <ClInclude Include="Commands\BankCommandTransactions.h" />
     <ClInclude Include="Commands\BankCommandWithdraw.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="Events\BankEventActivate.h" />
@@ -172,6 +173,7 @@
     <ClInclude Include="Events\BankEventClose.h" />
     <ClInclude Include="Events\BankEventDeposit.h" />
     <ClInclude Include="Events\BankEventOpen.h" />
+    <ClInclude Include="Events\BankEventTransactions.h" />
     <ClInclude Include="Events\BankEventWithdraw.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="banking-api.h" />
@@ -188,6 +190,7 @@
     <ClCompile Include="Commands\BankCommandClose.cpp" />
     <ClCompile Include="Commands\BankCommandDeposit.cpp" />
     <ClCompile Include="Commands\BankCommandOpen.cpp" />
+    <ClCompile Include="Commands\BankCommandTransactions.cpp" />
     <ClCompile Include="Commands\BankCommandWithdraw.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Events\BankEventActivate.cpp" />
@@ -195,6 +198,7 @@
     <ClCompile Include="Events\BankEventClose.cpp" />
     <ClCompile Include="Events\BankEventDeposit.cpp" />
     <ClCompile Include="Events\BankEventOpen.cpp" />
+    <ClCompile Include="Events\BankEventTransactions.cpp" />
     <ClCompile Include="Events\BankEventWithdraw.cpp" />
     <ClCompile Include="hello-world.cpp" />
   </ItemGroup>

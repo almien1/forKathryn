@@ -30,3 +30,13 @@ Currency BankEventDeposit::balanceAdjust(const Currency previousBalance) const
 	// Deposits add to account balance
 	return previousBalance + m_amount;
 }
+
+bool BankEventDeposit::showInTransactionHistory() const
+{
+	return true;
+}
+
+TransactionDescription BankEventDeposit::descriptionForTransactionHistory() const
+{
+	return std::format("Deposited {}", m_amount);
+}

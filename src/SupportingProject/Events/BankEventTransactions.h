@@ -1,12 +1,11 @@
 #pragma once
 #include "BankEvent.h"
 
-class BankEventBalance : public BankEvent
+class BankEventTransactions : public BankEvent
 {
 public:
-	BankEventBalance();
+	BankEventTransactions();
 
 	void apply(BankData& bank) override;
-
 };
 

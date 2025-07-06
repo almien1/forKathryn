@@ -218,6 +218,9 @@ Similar to balance, except it's adding to a multi-line string instead of adding 
 At some point we're going to need to sort out the issue with returning long strings over the
 DLL interface - this command is the first one that can generate arbitrarily-long text!
 
+*UPDATE:* Done - the DLL will hold the message in memory for long enough that the application
+can grab it as a `const char *`, then the application can call a function to free the memory.
+ 
 This is also the first time we need to consider newline style for the returned strings (or at
 least the first time that the DLL itself has needed to choose a newline style)
 

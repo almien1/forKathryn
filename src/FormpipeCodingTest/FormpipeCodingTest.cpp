@@ -29,14 +29,15 @@ int main()
 		else
 		{
 			static const char* bankingFunctionName = "bankingCommand";
+			static const char *getMessageFunctionName = "getMessage";
+			static const char* deleteMessageFunctionName = "deleteMessage";
 
-			// Load the "hello world" function
-			const bankingCommandFunction bankingApi = reinterpret_cast<bankingCommandFunction>(GetProcAddress(supportingProject, bankingFunctionName));
-			if (bankingApi == NULL)
-			{
-				std::cout << "Could not locate " << bankingFunctionName << " in " << dllFilename << std::endl;
-			}
-			else
+			// Load the DLL functions
+			const BankApiCommand bankingApi = reinterpret_cast<BankApiCommand>(GetProcAddress(supportingProject, bankingFunctionName));
+			const BankApiGetMessage getMessageFunction = reinterpret_cast<BankApiGetMessage>(GetProcAddress(supportingProject, getMessageFunctionName));
+			const BankApiDeleteMessage delMessageFunction = reinterpret_cast<BankApiDeleteMessage>(GetProcAddress(supportingProject, deleteMessageFunctionName));
+
+			if (bankingApi && getMessageFunction && delMessageFunction)
 			{
 				// Continuously take user input for the banking API and display the responses
 				std::string nextCommand;
@@ -54,11 +55,17 @@ int main()
 					else
 					{
 						// DLL call to process command and return response
-						char response[MAX_RESPONSE_SIZE] = "";
-						bankingApi(nextCommand.data(), response, sizeof(response));
+						MessageID messageID = bankingApi(nextCommand.data());
+						std::string response = getMessageFunction(messageID);
+						delMessageFunction(messageID);
+
 						std::cout << std::string(response) << std::endl;
 					}
 				} // while not finished
+			}
+			else
+			{
+				std::cout << "Could not locate functions in " << dllFilename << std::endl;
 			}
 		}
 	}

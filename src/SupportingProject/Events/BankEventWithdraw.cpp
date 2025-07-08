@@ -12,15 +12,15 @@ void BankEventWithdraw::apply(BankData& bank)
 {
 	if (bank.selectedAccount.empty())
 	{
-		m_description = "Could not withdraw - no account selected.";
+		m_description = L"Could not withdraw - no account selected.";
 	}
 	else if (bank.accounts[bank.selectedAccount].closed)
 	{
-		m_description = "Could not withdraw from closed account.";
+		m_description = L"Could not withdraw from closed account.";
 	}
 	else
 	{
-		m_description = std::format("Withdrawing {} from selected account", m_amount);
+		m_description = std::format(L"Withdrawing £{} from selected account", m_amount);
 		bank.accounts[bank.selectedAccount].history.push_back(std::make_shared<BankEventWithdraw>(m_amount));
 	}
 }
@@ -38,5 +38,5 @@ bool BankEventWithdraw::showInTransactionHistory() const
 
 TransactionDescription BankEventWithdraw::descriptionForTransactionHistory() const
 {
-	return std::format("Withdrew {}", m_amount);
+	return std::format(L"Withdrew £{}", m_amount);
 }

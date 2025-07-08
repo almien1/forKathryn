@@ -22,9 +22,9 @@ Banking::Banking()
 
 }
 
-std::string Banking::command(const std::string& input)
+BankString Banking::command(const BankString& input)
 {
-	std::string response;
+	BankString response;
 	bool handled = false;
 	for (auto& command : m_commands)
 	{
@@ -46,7 +46,7 @@ std::string Banking::command(const std::string& input)
 	}
 	if (!handled)
 	{
-		response = "Not a valid command.";
+		response = L"Not a valid command.";
 	}
 
 	return response;

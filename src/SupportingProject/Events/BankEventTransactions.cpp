@@ -11,12 +11,12 @@ void BankEventTransactions::apply(BankData& bank)
 {
 	if (bank.selectedAccount.empty())
 	{
-		m_description = "No account selected.";
+		m_description = L"No account selected.";
 	}
 	else
 	{
-		static const std::string newline = "\n";
-		std::string transactionHistory;
+		static const BankString newline = L"\n";
+		BankString transactionHistory;
 		bool first = true;
 		
 		for (auto& event : bank.accounts[bank.selectedAccount].history)

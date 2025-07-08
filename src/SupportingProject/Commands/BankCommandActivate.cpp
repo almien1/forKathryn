@@ -2,7 +2,7 @@
 #include "Events/BankEventActivate.h"
 
 BankCommandActivate::BankCommandActivate() :
-	BankCommand("A (.*)")
+	BankCommand(L"A (.*)")
 {
 	// "A name : Make name the account that following commands will work on (A = Activate)"
 }

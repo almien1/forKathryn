@@ -5,11 +5,11 @@
 class BankEventActivate : public BankEvent
 {
 public:
-	BankEventActivate(const std::string &accountName);
+	BankEventActivate(const BankString &accountName);
 
 	void apply(BankData& bank) override;
 
 private:
-	std::string m_accountName;
+	BankString m_accountName;
 };
 

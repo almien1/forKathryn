@@ -2,6 +2,7 @@
 #include "config.h"
 #include "BankCommand.h"
 #include "BankData.h"
+#include "BankingTypes.h"
 #include <string>
 
 class SUPPORTING_PROJECT_EXPORT Banking
@@ -9,7 +10,7 @@ class SUPPORTING_PROJECT_EXPORT Banking
 public:
 	Banking();
 
-	std::string command(const std::string& input);
+	BankString command(const BankString& input);
 
 protected:
 	BankData m_bank;

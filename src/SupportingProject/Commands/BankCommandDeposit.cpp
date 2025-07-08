@@ -2,7 +2,7 @@
 #include "Events/BankEventDeposit.h"
 
 BankCommandDeposit::BankCommandDeposit() :
-	BankCommand("D ([0-9]+)")
+	BankCommand(L"D ([0-9]+)")
 {
 	// "D amount : Deposit an amount (D = Deposit)"
 }

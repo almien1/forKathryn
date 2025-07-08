@@ -16,13 +16,13 @@ public:
 };
 
 // Bank accounts are referenced by name
-using BankAccounts = std::map<std::string, BankAccount>; // account name -> account data
+using BankAccounts = std::map<BankString, BankAccount>; // account name -> account data
 
 // The "state" of the bank includes the list of accounts,
 // and the active account on the current connection:
 class BankData
 {
 public:
-	std::string selectedAccount;
+	BankString selectedAccount;
 	BankAccounts accounts;
 };

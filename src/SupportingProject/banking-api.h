@@ -2,7 +2,7 @@
 #include "config.h"
 
 // Typedefs
-typedef char* BankingApiString;
+typedef wchar_t* BankingApiString;
 typedef int MessageID;
 
 // Function pointer typedefs

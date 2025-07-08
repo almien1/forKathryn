@@ -7,7 +7,7 @@
 Banking g_banking;
 
 // Messages waiting to be picked up by the calling system
-std::map<MessageID, std::string> g_messages;
+std::map<MessageID, std::wstring> g_messages;
 MessageID g_nextMessageID = 0;
 
 MessageID bankingCommand(const BankingApiString command)
@@ -17,7 +17,7 @@ MessageID bankingCommand(const BankingApiString command)
 
 	// Run the command against the banking system, and store the returned 
 	// message long enough for the calling function to collect it
-	g_messages[messageID] = g_banking.command(std::string(command));
+	g_messages[messageID] = g_banking.command(command);
 
 	return messageID;
 }

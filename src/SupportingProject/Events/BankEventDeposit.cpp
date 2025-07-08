@@ -12,15 +12,15 @@ void BankEventDeposit::apply(BankData& bank)
 {
 	if (bank.selectedAccount.empty())
 	{
-		m_description = "Could not deposit - no account selected.";
+		m_description = L"Could not deposit - no account selected.";
 	}
 	else if (bank.accounts[bank.selectedAccount].closed)
 	{
-		m_description = "Could not deposit into closed account.";
+		m_description = L"Could not deposit into closed account.";
 	}
 	else
 	{
-		m_description = std::format("Depositing {} into selected account", m_amount);
+		m_description = std::format(L"Depositing £{} into selected account", m_amount);
 		bank.accounts[bank.selectedAccount].history.push_back(std::make_shared<BankEventDeposit>(m_amount));
 	}
 }
@@ -38,5 +38,5 @@ bool BankEventDeposit::showInTransactionHistory() const
 
 TransactionDescription BankEventDeposit::descriptionForTransactionHistory() const
 {
-	return std::format("Deposited {}", m_amount);
+	return std::format(L"Deposited £{}", m_amount);
 }

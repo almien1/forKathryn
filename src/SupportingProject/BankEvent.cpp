@@ -1,6 +1,6 @@
 #include "BankEvent.h"
 
-std::string BankEvent::description() const
+BankString BankEvent::description() const
 {
     return m_description;
 }
@@ -22,5 +22,5 @@ bool BankEvent::showInTransactionHistory() const
 TransactionDescription BankEvent::descriptionForTransactionHistory() const
 {
 	// (will never be called as showInTransactionHistory is false for base-class)
-	return "";
+	return L"";
 }

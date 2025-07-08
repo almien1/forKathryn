@@ -11,11 +11,11 @@ void BankEventBalance::apply(BankData& bank)
 {
 	if (bank.selectedAccount.empty())
 	{
-		m_description = "No account selected.";
+		m_description = L"No account selected.";
 	}
 	else if (bank.accounts[bank.selectedAccount].closed)
 	{
-		m_description = "Account is closed.";
+		m_description = L"Account is closed.";
 	}
 	else
 	{
@@ -25,6 +25,6 @@ void BankEventBalance::apply(BankData& bank)
 		{
 			balance = event->balanceAdjust(balance);
 		}
-		m_description = std::format("Balance is {}", balance);
+		m_description = std::format(L"Balance is £{}", balance);
 	}
 }

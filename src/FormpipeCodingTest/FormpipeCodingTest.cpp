@@ -1,21 +1,28 @@
 #include "DllRunner.h"
 #include <iostream>
+#include <io.h>
+#include <fcntl.h>
 
 int main()
 {
-	DllRunner supportingProject("SupportingProject.DLL");
+	(void)_setmode(_fileno(stdout), _O_U8TEXT);
+	(void)_setmode(_fileno(stdin), _O_U8TEXT);
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+
+	DllRunner supportingProject(L"SupportingProject.DLL");
 
 	// Load the DLL
 	if (supportingProject.load())
 	{
 		// Continuously take user input for the banking API and display the responses
-		std::string nextCommand;
+		std::wstring nextCommand;
 		bool finished = false;
 		while (!finished)
 		{
 			// Display prompt, wait for user input
-			std::cout << "> ";
-			std::getline(std::cin, nextCommand);
+			std::wcout << L"> ";
+			std::getline(std::wcin, nextCommand);
 
 			if (nextCommand.empty())
 			{
@@ -24,14 +31,14 @@ int main()
 			else
 			{
 				// DLL call to process command and return response
-				std::string response = supportingProject.runCommand(nextCommand);
+				std::wstring response = supportingProject.runCommand(nextCommand);
 
-				std::cout << std::string(response) << std::endl;
+				std::wcout << std::wstring(response) << std::endl;
 			}
 		}
 	}
 	else
 	{
-		std::cout << supportingProject.getLastError() << std::endl;
+		std::wcout << supportingProject.getLastError() << std::endl;
 	}
 }

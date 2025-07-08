@@ -10,7 +10,7 @@ Banking g_banking;
 std::map<MessageID, std::string> g_messages;
 MessageID g_nextMessageID = 0;
 
-MessageID bankingCommand(const bankingApiString command)
+MessageID bankingCommand(const BankingApiString command)
 {
 	MessageID messageID = g_nextMessageID;
 	g_nextMessageID++;
@@ -22,7 +22,7 @@ MessageID bankingCommand(const bankingApiString command)
 	return messageID;
 }
 
-const bankingApiString getMessage(const MessageID messageID)
+const BankingApiString getMessage(const MessageID messageID)
 {
 	return g_messages[messageID].data();
 }

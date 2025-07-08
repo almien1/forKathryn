@@ -143,10 +143,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DllRunner.cpp" />
     <ClCompile Include="FormpipeCodingTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\framework.h" />
+    <ClInclude Include="DllRunner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

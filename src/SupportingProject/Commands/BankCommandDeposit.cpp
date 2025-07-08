@@ -10,21 +10,19 @@ BankCommandDeposit::BankCommandDeposit() :
 bool BankCommandDeposit::canHandle(const BankCommandFieldList fields) const
 {
 	// Just test converting the "number" to see if it's actually a valid number
+	bool success = false;
 	try
 	{
-		handleInternal(fields); 
-		return true;
-		// we could just copy the stoi() here, but calling the real function ensures we always 
-		// test the real code (although it "wastes" a make_shared call)
+		handleInternal(fields);
+		success = true;
 	}
 	catch (std::invalid_argument e)
 	{
-		return false;
 	}
 	catch (std::out_of_range e)
 	{
-		return false;
 	}
+	return success;
 }
 
 BankEventPtr BankCommandDeposit::handleInternal(const BankCommandFieldList fields) const

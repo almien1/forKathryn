@@ -14,8 +14,12 @@
     <ClCompile Include="FormpipeCodingTest.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="DllRunner.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\framework.h" />
+    <ClInclude Include="DllRunner.h" />
   </ItemGroup>
 </Project>

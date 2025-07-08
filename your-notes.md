@@ -226,8 +226,25 @@ can grab it as a `const char *`, then the application can call a function to fre
 This is also the first time we need to consider newline style for the returned strings (or at
 least the first time that the DLL itself has needed to choose a newline style)
 
-# Next steps:
+### Error handling
 
-- main() is getting large enough to make it a class.  Maybe remove the "part 1" stuff?
-  (or create a branch from when it was first working)
+*"what to do when withdrawing an amount that is too big"*
 
+Events can decide not to run based off any logic they decide, and populating m_description
+will return a message to the user.
+
+We've decided not to implement withdrawal limits yet because there's no agreed commands or
+configuration method for setting the limit on each account.
+
+One issue we might face is that the event will find it hard to know the current state of the
+account (e.g. to calculate the current balance) because it would have to run code similar as
+BankEventBalance::apply but only up to the previous transaction, and it doesn't yet know which
+transaction it is.
+
+Solving that might require reversing the BankEvent architecture - e.g. instead of providing 
+`balanceAdjust()` etc., we would create a `BankAccountState` structure to hold balance and open/
+closed, then change `BankEvent::apply()` to `BankEvent::apply(BankData& bank, BankAccountState &latestState)`.
+
+Then, each event would be able to query things like the account balance prior to the transaction
+being applied, and the results of (e.g.) BankEventBalance::apply would be available everywhere
+and not just within a balance enquiry.

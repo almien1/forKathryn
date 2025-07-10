@@ -2,7 +2,7 @@
 #include "Events/BankEventBalance.h"
 
 BankCommandBalance::BankCommandBalance() :
-	BankCommand("B$")
+	BankCommand(L"B$")
 {
 	// "B : Show current balance (B = balance)"
 }

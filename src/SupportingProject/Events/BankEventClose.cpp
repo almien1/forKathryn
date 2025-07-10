@@ -2,7 +2,7 @@
 #include "BankData.h"
 #include <format>
 
-BankEventClose::BankEventClose(const std::string& accountName) :
+BankEventClose::BankEventClose(const BankString& accountName) :
 	m_accountName(accountName)
 {
 
@@ -12,15 +12,15 @@ void BankEventClose::apply(BankData& bank)
 {
 	if (!bank.accounts.contains(m_accountName))
 	{
-		m_description = std::format("Could not close account \"{}\" - doesn't exist.", m_accountName);
+		m_description = std::format(L"Could not close account \"{}\" - doesn't exist.", m_accountName);
 	}
 	else if (bank.accounts[m_accountName].closed)
 	{
-		m_description = std::format("Could not close account \"{}\" - already closed.", m_accountName);
+		m_description = std::format(L"Could not close account \"{}\" - already closed.", m_accountName);
 	}
 	else
 	{
-		m_description = std::format("Closing account \"{}\".", m_accountName);
+		m_description = std::format(L"Closing account \"{}\".", m_accountName);
 		bank.accounts[m_accountName].history.push_back(std::make_shared<BankEventClose>(m_accountName));
 		bank.accounts[m_accountName].closed = true;
 	}
@@ -40,5 +40,5 @@ bool BankEventClose::showInTransactionHistory() const
 
 TransactionDescription BankEventClose::descriptionForTransactionHistory() const
 {
-	return "Account closed";
+	return L"Account closed";
 }

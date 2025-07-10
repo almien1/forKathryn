@@ -2,7 +2,7 @@
 #include "Events/BankEventWithdraw.h"
 
 BankCommandWithdraw::BankCommandWithdraw() :
-	BankCommand("W ([0-9]+([\\.][0-9]{2})?)$")
+	BankCommand(L"W ([0-9]+([\\.][0-9]{2})?)$")
 {
 	// "W amount : Withdraw an amount (W = Withdraw)"
 }

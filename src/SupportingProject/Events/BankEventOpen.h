@@ -5,7 +5,7 @@
 class BankEventOpen : public BankEvent
 {
 public:
-	BankEventOpen(const std::string &accountName);
+	BankEventOpen(const BankString&accountName);
 
 	void apply(BankData& bank) override;
 
@@ -13,6 +13,6 @@ public:
 	TransactionDescription descriptionForTransactionHistory() const override;
 
 private:
-	std::string m_accountName;
+	BankString m_accountName;
 };
 

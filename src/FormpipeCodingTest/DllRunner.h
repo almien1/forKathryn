@@ -6,12 +6,12 @@
 class DllRunner
 {
 public:
-	DllRunner(const std::string& filename);
+	DllRunner(const std::wstring& filename);
 	
 	bool load();
-	const std::string getLastError() const;
+	const std::wstring getLastError() const;
 
-	const std::string runCommand(std::string &command) const;
+	const std::wstring runCommand(std::wstring &command) const;
 
 protected:
 	// DLL pointer
@@ -23,7 +23,7 @@ protected:
 	BankApiDeleteMessage m_delMessageFunction = nullptr;
 
 private:
-	std::string m_filename;
-	std::string m_lastError;
+	std::wstring m_filename;
+	std::wstring m_lastError;
 };
 

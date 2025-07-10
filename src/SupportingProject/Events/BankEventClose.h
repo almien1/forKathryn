@@ -5,7 +5,7 @@
 class BankEventClose : public BankEvent
 {
 public:
-	BankEventClose(const std::string &accountName);
+	BankEventClose(const BankString &accountName);
 
 	void apply(BankData& bank) override;
 
@@ -15,6 +15,6 @@ public:
 	TransactionDescription descriptionForTransactionHistory() const override;
 
 private:
-	std::string m_accountName;
+	BankString m_accountName;
 };
 

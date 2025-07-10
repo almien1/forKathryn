@@ -1,12 +1,12 @@
 #include "BankCommand.h"
 #include <stdexcept>
 
-BankCommand::BankCommand(const char* commandRegexPattern) : 
+BankCommand::BankCommand(const wchar_t* commandRegexPattern) : 
 	m_commandRegex(commandRegexPattern)
 {
 }
 
-bool BankCommand::recognise(const std::string& potentialCommand) const
+bool BankCommand::recognise(const BankString& potentialCommand) const
 {
 	bool validCommand = false;
 	// Check whether it matches the regex
@@ -29,7 +29,7 @@ bool BankCommand::canHandle(const BankCommandFieldList fields) const
 	return true;
 }
 
-BankEventPtr BankCommand::handle(const std::string command)
+BankEventPtr BankCommand::handle(const BankString command)
 {
 	BankEventPtr result;
 	BankCommandFieldList fields;

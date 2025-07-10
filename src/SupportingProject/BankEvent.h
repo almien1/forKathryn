@@ -5,12 +5,12 @@
 
 class BankData;
 
-using TransactionDescription = std::string;
+using TransactionDescription = BankString;
 
 class BankEvent
 {
 public:
-	std::string description() const;
+	BankString description() const;
 	virtual void apply(BankData& bank) = 0;
 
 	// Override this if the event changes the account balance
@@ -21,7 +21,7 @@ public:
 	virtual TransactionDescription descriptionForTransactionHistory() const;
 
 protected:
-	std::string m_description;
+	BankString m_description;
 };
 
 using BankEventPtr = std::shared_ptr<BankEvent>;

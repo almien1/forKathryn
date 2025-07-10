@@ -2,7 +2,7 @@
 #include "Events/BankEventClose.h"
 
 BankCommandClose::BankCommandClose() :
-	BankCommand("C (.*)$")
+	BankCommand(L"C (.*)$")
 {
 	// "- C : Close account (C = Close)"
 }

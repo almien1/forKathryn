@@ -4,7 +4,7 @@
 class BankEventWithdraw : public BankEvent
 {
 public:
-	BankEventWithdraw(const Currency amount);
+	BankEventWithdraw(const Currency amount, const BankString currency = L"");
 
 	void apply(BankData& bank) override;
 
@@ -15,5 +15,6 @@ public:
 
 private:
 	Currency m_amount;
+	BankString m_currency; // populated during apply() in original object, and constructor for copied object
 };
 

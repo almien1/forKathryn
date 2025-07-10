@@ -12,6 +12,7 @@ class BankAccount
 {
 public:
 	bool closed = false;
+	BankString currency = L"£";
 	BankAccountHistory history;
 };
 

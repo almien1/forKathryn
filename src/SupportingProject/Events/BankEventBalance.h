@@ -7,6 +7,5 @@ public:
 	BankEventBalance();
 
 	void apply(BankData& bank) override;
-
 };
 

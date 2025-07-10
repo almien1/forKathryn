@@ -185,6 +185,7 @@
     <ClCompile Include="BankEvent.cpp" />
     <ClCompile Include="banking-api.cpp" />
     <ClCompile Include="Banking.cpp" />
+    <ClCompile Include="BankingTypes.cpp" />
     <ClCompile Include="Commands\BankCommandActivate.cpp" />
     <ClCompile Include="Commands\BankCommandBalance.cpp" />
     <ClCompile Include="Commands\BankCommandClose.cpp" />

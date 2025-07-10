@@ -3,6 +3,7 @@
 #include <list>
 #include <map>
 #include <string>
+#include "BankingTypes.h"
 
 // Each bank account contains a list of events for anything that modifies the account,
 // and a tag for whether the account has been closed:
@@ -12,7 +13,7 @@ class BankAccount
 {
 public:
 	bool closed = false;
-	BankString currency = L"£";
+	BankString currency = BankingTypes::defaultCurrency();
 	BankAccountHistory history;
 };
 

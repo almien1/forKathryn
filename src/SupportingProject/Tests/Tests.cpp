@@ -146,7 +146,7 @@ namespace Tests
 
 			// Negative currency format:
 			Assert::AreEqual(wstring(L"Withdrawing £22.30 from selected account."), bank.command(L"W 22.30")); 
-			Assert::AreEqual(wstring(L"Balance is £-13.30"), bank.command(L"B"));
+			Assert::AreEqual(wstring(L"Balance is -£13.30"), bank.command(L"B"));
 
 		}
 	private:

@@ -22,7 +22,7 @@ void BankEventWithdraw::apply(BankData& bank)
 	else
 	{
 		m_currency = bank.accounts[bank.selectedAccount].currency;
-		m_description = std::format(L"Withdrawing {}{:1.2f} from selected account.", m_currency, m_amount);
+		m_description = std::format(L"Withdrawing {} from selected account.", BankingTypes::formatCurrency(m_currency, m_amount));
 		bank.accounts[bank.selectedAccount].history.push_back(std::make_shared<BankEventWithdraw>(m_amount, m_currency));
 	}
 }
@@ -40,5 +40,5 @@ bool BankEventWithdraw::showInTransactionHistory() const
 
 TransactionDescription BankEventWithdraw::descriptionForTransactionHistory() const
 {
-	return std::format(L"Withdrew {}{:1.2f}", m_currency, m_amount);
+	return std::format(L"Withdrew {}", BankingTypes::formatCurrency(m_currency, m_amount));
 }

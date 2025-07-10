@@ -22,7 +22,7 @@ void BankEventDeposit::apply(BankData& bank)
 	else
 	{
 		m_currency = bank.accounts[bank.selectedAccount].currency;
-		m_description = std::format(L"Depositing {}{:1.2f} into selected account.", m_currency, m_amount);
+		m_description = std::format(L"Depositing {} into selected account.", BankingTypes::formatCurrency(m_currency, m_amount));
 		bank.accounts[bank.selectedAccount].history.push_back(std::make_shared<BankEventDeposit>(m_amount, m_currency));
 	}
 }
@@ -40,5 +40,5 @@ bool BankEventDeposit::showInTransactionHistory() const
 
 TransactionDescription BankEventDeposit::descriptionForTransactionHistory() const
 {
-	return std::format(L"Deposited {}{:1.2f}", m_currency, m_amount);
+	return std::format(L"Deposited {}", BankingTypes::formatCurrency(m_currency, m_amount));
 }

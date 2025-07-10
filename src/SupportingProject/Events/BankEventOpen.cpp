@@ -14,7 +14,7 @@ void BankEventOpen::apply(BankData& bank)
 	{
 		if (bank.accounts[m_accountName].closed)
 		{
-			m_description = std::format("Re-opening account \"{}\"", m_accountName);
+			m_description = std::format("Re-opening account \"{}\".", m_accountName);
 			bank.accounts[m_accountName].closed = false;
 			bank.accounts[m_accountName].history.push_back(std::make_shared<BankEventOpen>(m_accountName));
 		}
@@ -25,7 +25,7 @@ void BankEventOpen::apply(BankData& bank)
 	}
 	else
 	{
-		m_description = std::format("Opening account with name \"{}\"", m_accountName);
+		m_description = std::format("Opening account with name \"{}\".", m_accountName);
 		BankAccount newAccount;
 		newAccount.closed = false;
 		newAccount.history.push_back(std::make_shared<BankEventOpen>(m_accountName));

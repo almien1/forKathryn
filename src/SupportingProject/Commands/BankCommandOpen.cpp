@@ -2,7 +2,7 @@
 #include "Events/BankEventOpen.h"
 
 BankCommandOpen::BankCommandOpen() : 
-	BankCommand("O (.*)")
+	BankCommand("O (.*)$")
 {
 	// "-O name : Create account with name(O = open)"
 }

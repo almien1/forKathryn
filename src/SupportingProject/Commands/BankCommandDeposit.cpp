@@ -2,7 +2,7 @@
 #include "Events/BankEventDeposit.h"
 
 BankCommandDeposit::BankCommandDeposit() :
-	BankCommand("D ([0-9]+)")
+	BankCommand("D ([0-9]+([\\.][0-9]{2})?)$")
 {
 	// "D amount : Deposit an amount (D = Deposit)"
 }
@@ -27,6 +27,6 @@ bool BankCommandDeposit::canHandle(const BankCommandFieldList fields) const
 
 BankEventPtr BankCommandDeposit::handleInternal(const BankCommandFieldList fields) const
 {
-	Currency amount = std::stoi(fields[1].str());
+	Currency amount = std::stod(fields[1].str());
 	return std::make_shared<BankEventDeposit>(amount);
 }

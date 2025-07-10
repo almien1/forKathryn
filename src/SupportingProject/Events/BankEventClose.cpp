@@ -20,7 +20,7 @@ void BankEventClose::apply(BankData& bank)
 	}
 	else
 	{
-		m_description = std::format("Closing account \"{}\"", m_accountName);
+		m_description = std::format("Closing account \"{}\".", m_accountName);
 		bank.accounts[m_accountName].history.push_back(std::make_shared<BankEventClose>(m_accountName));
 		bank.accounts[m_accountName].closed = true;
 	}

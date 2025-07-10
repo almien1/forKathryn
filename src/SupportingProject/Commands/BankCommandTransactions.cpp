@@ -2,7 +2,7 @@
 #include "Events/BankEventTransactions.h"
 
 BankCommandTransactions::BankCommandTransactions() :
-	BankCommand("T")
+	BankCommand("T$")
 {
 	// "T : List transactions on account (T = Transactions)"
 }

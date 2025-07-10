@@ -16,7 +16,7 @@ void BankEventActivate::apply(BankData& bank)
 	}
 	else
 	{
-		m_description = std::format("Activating account \"{}\"", m_accountName);
+		m_description = std::format("Activating account \"{}\".", m_accountName);
 		bank.selectedAccount = m_accountName;
 	}
 }

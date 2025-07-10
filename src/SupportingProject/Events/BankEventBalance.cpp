@@ -25,6 +25,6 @@ void BankEventBalance::apply(BankData& bank)
 		{
 			balance = event->balanceAdjust(balance);
 		}
-		m_description = std::format("Balance is {}", balance);
+		m_description = std::format("Balance is {:1.2f}", balance);
 	}
 }
